@@ -167,7 +167,7 @@ Public Class Main
             DataGridView1.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect
         End If
 
-        Me.Text = Application.ProductName & " - v" & Application.ProductVersion
+        Me.Text = Application.ProductName & " BETA - v" & Application.ProductVersion
         TextBoxSearch.Select()
         AutoCheckForUpdates()
         'Set default username
@@ -323,7 +323,6 @@ Public Class Main
         ButtonCopyIP.Enabled = False
         Try
             ip = DataGridView1.CurrentRow.Cells(3).Value
-            'MsgBox(Prompt:=ip)
             Clipboard.SetDataObject(ip, True, 5, 100)
         Catch ex As Exception
             exception = ex.Message
@@ -335,6 +334,7 @@ Public Class Main
     Private Sub ViewChangelogToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewChangelogToolStripMenuItem.Click
         Process.Start("https://ipoffice.tools/#changelog")
     End Sub
+
     ' A sad piece of code that never gets executed :'(
     Private Sub BuyMeACoffeeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BuyMeACoffeeToolStripMenuItem.Click
         Dim DonateChoice As Integer = MsgBox(Buttons:=vbOKCancel, Title:="Buy me a coffee?",
@@ -419,8 +419,13 @@ Public Class Main
             StatusStrip1.BackColor = Color.FromArgb(100, 100, 100)
             StatusStrip1.ForeColor = Color.White
         ElseIf DarkMode = True Then
-            MsgBox(Prompt:="I don't know how to turn off dark mode yet, sorry. :(")
+            MsgBox(Prompt:="I don't know how to turn off dark mode yet, sorry. :( Will restart.")
+            Application.Restart()
         End If
 
+    End Sub
+
+    Private Sub FixVoicemailProClientToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FixVoicemailProClientToolStripMenuItem.Click
+        VMProFix.Show()
     End Sub
 End Class

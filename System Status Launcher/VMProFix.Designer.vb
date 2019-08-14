@@ -24,8 +24,12 @@ Partial Class VMProFix
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(VMProFix))
         Me.ButtonContinue = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.SuspendLayout
+        Me.LabelInfo = New System.Windows.Forms.Label()
+        Me.TextBoxRegkeyPath = New System.Windows.Forms.TextBox()
+        Me.ButtonBrowse = New System.Windows.Forms.Button()
+        Me.SaveFileDialogRegKey = New System.Windows.Forms.SaveFileDialog()
+        Me.ButtonRetry = New System.Windows.Forms.Button()
+        Me.SuspendLayout()
         '
         'ButtonContinue
         '
@@ -36,15 +40,47 @@ Partial Class VMProFix
         Me.ButtonContinue.Text = "Continue"
         Me.ButtonContinue.UseVisualStyleBackColor = True
         '
-        'Label1
+        'LabelInfo
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 9)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(323, 104)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = resources.GetString("Label1.Text")
-        Me.Label1.UseMnemonic = False
+        Me.LabelInfo.Location = New System.Drawing.Point(12, 9)
+        Me.LabelInfo.Name = "LabelInfo"
+        Me.LabelInfo.Size = New System.Drawing.Size(323, 104)
+        Me.LabelInfo.TabIndex = 9999
+        Me.LabelInfo.Text = resources.GetString("LabelInfo.Text")
+        Me.LabelInfo.UseMnemonic = False
+        '
+        'TextBoxRegkeyPath
+        '
+        Me.TextBoxRegkeyPath.Location = New System.Drawing.Point(15, 72)
+        Me.TextBoxRegkeyPath.Name = "TextBoxRegkeyPath"
+        Me.TextBoxRegkeyPath.ReadOnly = True
+        Me.TextBoxRegkeyPath.Size = New System.Drawing.Size(251, 20)
+        Me.TextBoxRegkeyPath.TabIndex = 10000
+        Me.TextBoxRegkeyPath.Visible = False
+        '
+        'ButtonBrowse
+        '
+        Me.ButtonBrowse.Location = New System.Drawing.Point(272, 70)
+        Me.ButtonBrowse.Name = "ButtonBrowse"
+        Me.ButtonBrowse.Size = New System.Drawing.Size(75, 23)
+        Me.ButtonBrowse.TabIndex = 10001
+        Me.ButtonBrowse.Text = "Browse"
+        Me.ButtonBrowse.UseVisualStyleBackColor = True
+        Me.ButtonBrowse.Visible = False
+        '
+        'SaveFileDialogRegKey
+        '
+        Me.SaveFileDialogRegKey.Filter = "Registry Key Files (.reg)|*.reg"
+        '
+        'ButtonRetry
+        '
+        Me.ButtonRetry.Location = New System.Drawing.Point(130, 90)
+        Me.ButtonRetry.Name = "ButtonRetry"
+        Me.ButtonRetry.Size = New System.Drawing.Size(75, 23)
+        Me.ButtonRetry.TabIndex = 10002
+        Me.ButtonRetry.Text = "Retry"
+        Me.ButtonRetry.UseVisualStyleBackColor = True
+        Me.ButtonRetry.Visible = False
         '
         'VMProFix
         '
@@ -52,14 +88,22 @@ Partial Class VMProFix
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(354, 164)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.ButtonRetry)
+        Me.Controls.Add(Me.ButtonBrowse)
+        Me.Controls.Add(Me.TextBoxRegkeyPath)
+        Me.Controls.Add(Me.LabelInfo)
         Me.Controls.Add(Me.ButtonContinue)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "VMProFix"
         Me.Text = "VMPro_Fix"
         Me.ResumeLayout(False)
-        Me.PerformLayout
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents ButtonContinue As Button
-    Friend WithEvents Label1 As Label
+    Friend WithEvents LabelInfo As Label
+    Friend WithEvents TextBoxRegkeyPath As TextBox
+    Friend WithEvents ButtonBrowse As Button
+    Friend WithEvents SaveFileDialogRegKey As SaveFileDialog
+    Friend WithEvents ButtonRetry As Button
 End Class

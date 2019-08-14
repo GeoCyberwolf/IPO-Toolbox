@@ -66,11 +66,13 @@ Partial Class Main
         Me.ButtonLaunchManager = New System.Windows.Forms.Button()
         Me.ButtonCopyPassword = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.ReportABugToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.StatusStrip1.SuspendLayout
-        Me.MenuStrip1.SuspendLayout
-        Me.ContextMenuStrip1.SuspendLayout
-        Me.SuspendLayout
+        Me.StatusStrip1.SuspendLayout()
+        Me.MenuStrip1.SuspendLayout()
+        Me.ContextMenuStrip1.SuspendLayout()
+        Me.SuspendLayout()
         '
         'DataGridView1
         '
@@ -218,11 +220,10 @@ Partial Class Main
         Me.FixVoicemailProClientToolStripMenuItem.Name = "FixVoicemailProClientToolStripMenuItem"
         Me.FixVoicemailProClientToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
         Me.FixVoicemailProClientToolStripMenuItem.Text = "Fix Voicemail Pro Client"
-        Me.FixVoicemailProClientToolStripMenuItem.Visible = False
         '
         'HelpToolStripMenuItem
         '
-        Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem, Me.CheckForUpdatesToolStripMenuItem, Me.ViewChangelogToolStripMenuItem, Me.ToolStripSeparator3, Me.BuyMeACoffeeToolStripMenuItem})
+        Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem, Me.CheckForUpdatesToolStripMenuItem, Me.ViewChangelogToolStripMenuItem, Me.ToolStripSeparator4, Me.ReportABugToolStripMenuItem, Me.ToolStripSeparator3, Me.BuyMeACoffeeToolStripMenuItem})
         Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
         Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
         Me.HelpToolStripMenuItem.Text = "Help"
@@ -230,30 +231,30 @@ Partial Class Main
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'CheckForUpdatesToolStripMenuItem
         '
         Me.CheckForUpdatesToolStripMenuItem.Name = "CheckForUpdatesToolStripMenuItem"
-        Me.CheckForUpdatesToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
+        Me.CheckForUpdatesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.CheckForUpdatesToolStripMenuItem.Text = "Check for Updates"
         '
         'ViewChangelogToolStripMenuItem
         '
         Me.ViewChangelogToolStripMenuItem.Name = "ViewChangelogToolStripMenuItem"
-        Me.ViewChangelogToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
+        Me.ViewChangelogToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ViewChangelogToolStripMenuItem.Text = "View Changelog"
         '
         'ToolStripSeparator3
         '
         Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(171, 6)
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(177, 6)
         '
         'BuyMeACoffeeToolStripMenuItem
         '
         Me.BuyMeACoffeeToolStripMenuItem.Name = "BuyMeACoffeeToolStripMenuItem"
-        Me.BuyMeACoffeeToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
+        Me.BuyMeACoffeeToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.BuyMeACoffeeToolStripMenuItem.Text = "Buy me a coffee? :)"
         '
         'OpenFileDialog1
@@ -381,6 +382,17 @@ Partial Class Main
         Me.Label1.TabIndex = 13
         Me.Label1.UseMnemonic = False
         '
+        'ReportABugToolStripMenuItem
+        '
+        Me.ReportABugToolStripMenuItem.Name = "ReportABugToolStripMenuItem"
+        Me.ReportABugToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ReportABugToolStripMenuItem.Text = "Report a Bug"
+        '
+        'ToolStripSeparator4
+        '
+        Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(177, 6)
+        '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -406,12 +418,12 @@ Partial Class Main
         Me.Name = "Main"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.StatusStrip1.ResumeLayout(False)
-        Me.StatusStrip1.PerformLayout
+        Me.StatusStrip1.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout
+        Me.MenuStrip1.PerformLayout()
         Me.ContextMenuStrip1.ResumeLayout(False)
         Me.ResumeLayout(False)
-        Me.PerformLayout
+        Me.PerformLayout()
 
     End Sub
 
@@ -457,4 +469,6 @@ Partial Class Main
     Friend WithEvents AddKnownUnitsEntryToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DarkModeToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Label1 As Label
+    Friend WithEvents ToolStripSeparator4 As ToolStripSeparator
+    Friend WithEvents ReportABugToolStripMenuItem As ToolStripMenuItem
 End Class
