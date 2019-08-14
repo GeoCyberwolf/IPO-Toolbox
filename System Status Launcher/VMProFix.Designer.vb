@@ -29,6 +29,7 @@ Partial Class VMProFix
         Me.ButtonBrowse = New System.Windows.Forms.Button()
         Me.SaveFileDialogRegKey = New System.Windows.Forms.SaveFileDialog()
         Me.ButtonRetry = New System.Windows.Forms.Button()
+        Me.ButtonFinish = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'ButtonContinue
@@ -82,12 +83,23 @@ Partial Class VMProFix
         Me.ButtonRetry.UseVisualStyleBackColor = True
         Me.ButtonRetry.Visible = False
         '
+        'ButtonFinish
+        '
+        Me.ButtonFinish.Location = New System.Drawing.Point(130, 116)
+        Me.ButtonFinish.Name = "ButtonFinish"
+        Me.ButtonFinish.Size = New System.Drawing.Size(75, 23)
+        Me.ButtonFinish.TabIndex = 10003
+        Me.ButtonFinish.Text = "Finish"
+        Me.ButtonFinish.UseVisualStyleBackColor = True
+        Me.ButtonFinish.Visible = False
+        '
         'VMProFix
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(354, 164)
+        Me.Controls.Add(Me.ButtonFinish)
         Me.Controls.Add(Me.ButtonRetry)
         Me.Controls.Add(Me.ButtonBrowse)
         Me.Controls.Add(Me.TextBoxRegkeyPath)
@@ -95,7 +107,7 @@ Partial Class VMProFix
         Me.Controls.Add(Me.ButtonContinue)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "VMProFix"
-        Me.Text = "VMPro_Fix"
+        Me.Text = "Fix Voicemail Pro Client"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -106,4 +118,5 @@ Partial Class VMProFix
     Friend WithEvents ButtonBrowse As Button
     Friend WithEvents SaveFileDialogRegKey As SaveFileDialog
     Friend WithEvents ButtonRetry As Button
+    Friend WithEvents ButtonFinish As Button
 End Class

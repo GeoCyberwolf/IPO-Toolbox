@@ -1,4 +1,9 @@
-﻿Public Class VMProFix
+﻿Imports Microsoft.VisualBasic
+Imports System
+Imports System.Security.Permissions
+Imports Microsoft.Win32
+
+Public Class VMProFix
     Dim CurrentStep As Integer = 1
     Dim RegKeyPath As String
     Dim RegistryCommand As String
@@ -9,10 +14,8 @@
         p = Process.GetProcessesByName("VoicemailPro")
         If p.Count > 0 Then
             VMProRunning = True
-            MsgBox(Prompt:="VM Pro running")
         Else
             VMProRunning = False
-            MsgBox(Prompt:="VM Pro NOT running")
         End If
     End Sub
 
@@ -51,6 +54,23 @@
         End If
     End Sub
 
+    Private Sub Step5()
+        'Step 5 Delete VMPro Registry Keys
+        LabelInfo.Text = "Fixing Voicemail Pro Client......."
+        Dim VMProKey As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Avaya\Voicemail Pro", True)
+        VMProKey.DeleteValue("APP_CX")
+        VMProKey.DeleteValue("APP_CY")
+        Dim VMProCX As Object = VMProKey.GetValue("APP_CX")
+        Dim VMProCY As Object = VMProKey.GetValue("APP_CY")
+        If VMProCX Is Nothing And VMProCY Is Nothing Then
+            LabelInfo.Text = "Fix completed!" & vbCrLf & vbCrLf & "You can now re-launch Voicemail Pro Client and it should now work."
+        Else
+            LabelInfo.Text = "An error occurred while trying to fix voicemail pro."
+        End If
+        ButtonContinue.Visible = False
+        ButtonFinish.Visible = True
+    End Sub
+
     Private Sub ButtonContinue_Click(sender As Object, e As EventArgs) Handles ButtonContinue.Click
         If CurrentStep = 1 Then
             CurrentStep = 2
@@ -63,7 +83,7 @@
             Step4()
         ElseIf CurrentStep = 4 Then
             CurrentStep = 5
-
+            Step5()
         End If
     End Sub
 
@@ -79,5 +99,9 @@
 
     Private Sub ButtonRetry_Click(sender As Object, e As EventArgs) Handles ButtonRetry.Click
         Step4()
+    End Sub
+
+    Private Sub ButtonFinish_Click(sender As Object, e As EventArgs) Handles ButtonFinish.Click
+        Me.Close()
     End Sub
 End Class
