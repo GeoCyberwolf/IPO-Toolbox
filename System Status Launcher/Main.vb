@@ -195,17 +195,17 @@ Public Class Main
         '    ToolStripStatusLabel1.Text = "No Known Units file set!"
         'End Try
 
-        Try
-            Dim OldSettings As String = My.Computer.FileSystem.ReadAllText("csvpath.txt")
-            If Not String.IsNullOrWhiteSpace(OldSettings) Then
-                My.Settings.CSVPath = OldSettings
-                My.Settings.Save()
-                My.Computer.FileSystem.DeleteFile("csvpath.txt")
-                MsgBox(Buttons:=vbInformation, Title:="Success!", Prompt:="csvpath.txt has successfully been imported and deleted!")
-            End If
-        Catch ex As Exception
+        'Try
+        '    Dim OldSettings As String = My.Computer.FileSystem.ReadAllText("csvpath.txt")
+        '    If Not String.IsNullOrWhiteSpace(OldSettings) Then
+        '        My.Settings.CSVPath = OldSettings
+        '        My.Settings.Save()
+        '        My.Computer.FileSystem.DeleteFile("csvpath.txt")
+        '        MsgBox(Buttons:=vbInformation, Title:="Success!", Prompt:="csvpath.txt has successfully been imported and deleted!")
+        '    End If
+        'Catch ex As Exception
 
-        End Try
+        'End Try
 
         Try
             If My.Settings.CSVPath = "" Then
@@ -252,6 +252,7 @@ Public Class Main
 
     Private Sub TextBoxSearch_TextChanged(sender As Object, e As EventArgs) Handles TextBoxSearch.TextChanged
         Dim search As String = Regex.Replace(TextBoxSearch.Text, "[^A-Za-z0-9-_& ]", "")
+        TextBoxSearch.Text = search
         If String.IsNullOrWhiteSpace(TextBoxSearch.Text) Then
             systemlist.DefaultView.RowFilter = ""
             DataGridView1.ClearSelection()
