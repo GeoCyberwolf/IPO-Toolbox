@@ -49,6 +49,8 @@ Partial Class Main
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CheckForUpdatesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ViewChangelogToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ReportABugToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.BuyMeACoffeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
@@ -66,13 +68,11 @@ Partial Class Main
         Me.ButtonLaunchManager = New System.Windows.Forms.Button()
         Me.ButtonCopyPassword = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.ReportABugToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.StatusStrip1.SuspendLayout()
-        Me.MenuStrip1.SuspendLayout()
-        Me.ContextMenuStrip1.SuspendLayout()
-        Me.SuspendLayout()
+        Me.StatusStrip1.SuspendLayout
+        Me.MenuStrip1.SuspendLayout
+        Me.ContextMenuStrip1.SuspendLayout
+        Me.SuspendLayout
         '
         'DataGridView1
         '
@@ -246,6 +246,17 @@ Partial Class Main
         Me.ViewChangelogToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ViewChangelogToolStripMenuItem.Text = "View Changelog"
         '
+        'ToolStripSeparator4
+        '
+        Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(177, 6)
+        '
+        'ReportABugToolStripMenuItem
+        '
+        Me.ReportABugToolStripMenuItem.Name = "ReportABugToolStripMenuItem"
+        Me.ReportABugToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ReportABugToolStripMenuItem.Text = "Report a Bug"
+        '
         'ToolStripSeparator3
         '
         Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
@@ -382,17 +393,6 @@ Partial Class Main
         Me.Label1.TabIndex = 13
         Me.Label1.UseMnemonic = False
         '
-        'ReportABugToolStripMenuItem
-        '
-        Me.ReportABugToolStripMenuItem.Name = "ReportABugToolStripMenuItem"
-        Me.ReportABugToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.ReportABugToolStripMenuItem.Text = "Report a Bug"
-        '
-        'ToolStripSeparator4
-        '
-        Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
-        Me.ToolStripSeparator4.Size = New System.Drawing.Size(177, 6)
-        '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -418,12 +418,12 @@ Partial Class Main
         Me.Name = "Main"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.StatusStrip1.ResumeLayout(False)
-        Me.StatusStrip1.PerformLayout()
+        Me.StatusStrip1.PerformLayout
         Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
+        Me.MenuStrip1.PerformLayout
         Me.ContextMenuStrip1.ResumeLayout(False)
         Me.ResumeLayout(False)
-        Me.PerformLayout()
+        Me.PerformLayout
 
     End Sub
 

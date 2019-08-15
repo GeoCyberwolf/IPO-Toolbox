@@ -428,4 +428,8 @@ Public Class Main
     Private Sub FixVoicemailProClientToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FixVoicemailProClientToolStripMenuItem.Click
         VMProFix.Show()
     End Sub
+
+    Private Sub ReportABugToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReportABugToolStripMenuItem.Click
+        Process.Start("https://ipoffice.tools/bugreport")
+    End Sub
 End Class
