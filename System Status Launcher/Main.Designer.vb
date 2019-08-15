@@ -176,30 +176,30 @@ Partial Class Main
         Me.OptionsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SingleCellSelectToolStripMenuItem, Me.DarkModeToolStripMenuItem, Me.ToolStripSeparator2, Me.ResetAllSettingsToolStripMenuItem})
         Me.OptionsToolStripMenuItem.Name = "OptionsToolStripMenuItem"
         Me.OptionsToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
-        Me.OptionsToolStripMenuItem.Text = "Options"
+        Me.OptionsToolStripMenuItem.Text = "Settings"
         '
         'SingleCellSelectToolStripMenuItem
         '
         Me.SingleCellSelectToolStripMenuItem.CheckOnClick = True
         Me.SingleCellSelectToolStripMenuItem.Name = "SingleCellSelectToolStripMenuItem"
-        Me.SingleCellSelectToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
+        Me.SingleCellSelectToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.SingleCellSelectToolStripMenuItem.Text = "Single Cell Select"
         '
         'DarkModeToolStripMenuItem
         '
         Me.DarkModeToolStripMenuItem.Name = "DarkModeToolStripMenuItem"
-        Me.DarkModeToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
+        Me.DarkModeToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.DarkModeToolStripMenuItem.Text = "Dark Mode"
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(161, 6)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(177, 6)
         '
         'ResetAllSettingsToolStripMenuItem
         '
         Me.ResetAllSettingsToolStripMenuItem.Name = "ResetAllSettingsToolStripMenuItem"
-        Me.ResetAllSettingsToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
+        Me.ResetAllSettingsToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ResetAllSettingsToolStripMenuItem.Text = "Reset All Settings"
         '
         'ToolsToolStripMenuItem
