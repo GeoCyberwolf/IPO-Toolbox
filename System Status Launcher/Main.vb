@@ -1,4 +1,5 @@
 ﻿Imports System.Text.RegularExpressions
+Imports IPO_Toolbox.Functions
 Public Class Main
 
     'Define global variables
