@@ -130,12 +130,6 @@ Public Class Main
         TextBoxSearch.Select()
     End Sub
 
-    'Private Sub Form1_Resize(sender As Object, e As EventArgs) Handles Me.Resize
-    '    If Me.WindowState = FormWindowState.Minimized Then
-    '        MinimizeToTray()
-    '    End If
-    'End Sub
-
     Private Sub NotifyIcon1_DoubleClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles NotifyIcon1.DoubleClick
         OpenFromTray()
     End Sub
@@ -182,31 +176,6 @@ Public Class Main
             .Columns.Add("Version", System.Type.GetType("System.String"))
             .Columns.Add("Mode", System.Type.GetType("System.String"))
         End With
-        'Here we load the csv path from our csvpath text file
-        'Try
-        '    file = My.Computer.FileSystem.ReadAllText("csvpath.txt")
-        '    If Not String.IsNullOrWhiteSpace(file) Then
-        '        LoadCsv()
-        '    Else
-        '        ToolStripStatusLabel1.Text = "No Known Units file set!"
-        '    End If
-        'Catch ex As Exception
-        '    'MsgBox(Prompt:="An error has occured while trying to load the csv file stored in csvpath.txt")
-        '    ToolStripStatusLabel1.Text = "No Known Units file set!"
-        'End Try
-
-        'Try
-        '    Dim OldSettings As String = My.Computer.FileSystem.ReadAllText("csvpath.txt")
-        '    If Not String.IsNullOrWhiteSpace(OldSettings) Then
-        '        My.Settings.CSVPath = OldSettings
-        '        My.Settings.Save()
-        '        My.Computer.FileSystem.DeleteFile("csvpath.txt")
-        '        MsgBox(Buttons:=vbInformation, Title:="Success!", Prompt:="csvpath.txt has successfully been imported and deleted!")
-        '    End If
-        'Catch ex As Exception
-
-        'End Try
-
         Try
             If My.Settings.CSVPath = "" Then
                 ToolStripStatusLabel1.Text = "No Known Units file set!"
@@ -237,12 +206,6 @@ Public Class Main
     Private Sub OpenFileDialog1_FileOk(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles OpenFileDialog1.FileOk
         My.Settings.CSVPath = OpenFileDialog1.FileName
         My.Settings.Save()
-        'Try
-        '    'Store path to text file
-        '    My.Computer.FileSystem.WriteAllText("csvpath.txt", file, False)
-        'Catch ex As Exception
-        '    MsgBox(Prompt:="Failed to store path to text file!")
-        'End Try
         LoadCsv()
     End Sub
 
