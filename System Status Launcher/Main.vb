@@ -52,7 +52,7 @@ Public Class Main
             result = Validator.ActivateTrial(45)
             Me.Enabled = False
             Me.Hide()
-            LicenseValidation.Show()
+            LicensePrompt.Show()
             'or save license
             Dim userLicense As String = ""
             result = Validator.CheckLicense(userLicense)

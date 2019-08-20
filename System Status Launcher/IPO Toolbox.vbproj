@@ -112,10 +112,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
-    <Compile Include="LicenseValidation.Designer.vb">
-      <DependentUpon>LicenseValidation.vb</DependentUpon>
+    <Compile Include="LicensePrompt.Designer.vb">
+      <DependentUpon>LicensePrompt.vb</DependentUpon>
     </Compile>
-    <Compile Include="LicenseValidation.vb">
+    <Compile Include="LicensePrompt.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Main.Designer.vb">
@@ -160,8 +160,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="LicenseValidation.resx">
-      <DependentUpon>LicenseValidation.vb</DependentUpon>
+    <EmbeddedResource Include="LicensePrompt.resx">
+      <DependentUpon>LicensePrompt.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.vb</DependentUpon>
