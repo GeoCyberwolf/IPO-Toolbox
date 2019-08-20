@@ -50,10 +50,11 @@ Public Class Main
             'prompt user for trial or to insert license info then decide what to do
             'activate trial
             result = Validator.ActivateTrial(45)
-            'LicenseValidation.Show()
-            'Me.Close()
+            Me.Enabled = False
+            Me.Hide()
+            LicenseValidation.Show()
             'or save license
-            Dim userLicense As String = "Get the license string from your user"
+            Dim userLicense As String = ""
             result = Validator.CheckLicense(userLicense)
             'decide if you want to save the license...
             Validator.SaveLicense(userLicense)
