@@ -112,6 +112,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Functions.vb" />
     <Compile Include="LicensePrompt.Designer.vb">
       <DependentUpon>LicensePrompt.vb</DependentUpon>
     </Compile>
