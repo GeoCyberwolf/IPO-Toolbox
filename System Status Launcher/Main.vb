@@ -290,11 +290,10 @@ Public Class Main
     Private Sub TextBoxSearch_TextChanged(sender As Object, e As EventArgs) Handles TextBoxSearch.TextChanged
         Dim search As String = Regex.Replace(TextBoxSearch.Text, "[^A-Za-z0-9-_& ]", "")
         TextBoxSearch.Text = search
-        If String.IsNullOrWhiteSpace(TextBoxSearch.Text) Then
+        If String.IsNullOrWhiteSpace(search) Then
             systemlist.DefaultView.RowFilter = ""
             DataGridView1.ClearSelection()
             DataGridView1.FirstDisplayedScrollingRowIndex = 0
-            Label1.Text = ""
         Else
             systemlist.DefaultView.RowFilter = "[System Name] LIKE '%" & search & "%'"
         End If
