@@ -1,7 +1,16 @@
 ﻿Imports System.Text.RegularExpressions
 Imports Habanero.Licensing.Validation
 Public Class Main
-
+    'Define global variables
+    Dim systemlist As New DataTable
+    Dim file As String
+    Dim exception As String
+    Dim ip As String
+    Dim keyCombo As New List(Of Keys)({Keys.Shift, Keys.Enter})
+    Dim currentKeys As New List(Of Keys)
+    Dim DarkMode As Boolean
+    Dim CSVLineCount As Integer = 0
+    Dim MaxCSVSize As Integer = 50
     '///LICENSING CODE///
     'create code for applicationsecret
     Dim applicationSecret() As Byte = Convert.FromBase64String("c3ZoNKo2mUG1wswVtsHPDQ==")
@@ -71,16 +80,6 @@ Public Class Main
     End Sub
     '////END LICENSING CODE////
 
-    'Define global variables
-    Dim systemlist As New DataTable
-    Dim file As String
-    Dim exception As String
-    Dim ip As String
-    Dim keyCombo As New List(Of Keys)({Keys.Shift, Keys.Enter})
-    Dim currentKeys As New List(Of Keys)
-    Dim DarkMode As Boolean
-    Dim CSVLineCount As Integer = 0
-    Dim MaxCSVSize As Integer = 50
     'Function to launch system status with our IP, Username and Password
     Public Sub LaunchSSA()
         Try
