@@ -10,7 +10,8 @@ Public Class Main
     Dim currentKeys As New List(Of Keys)
     Dim DarkMode As Boolean
     Dim CSVLineCount As Integer = 0
-    Dim MaxCSVSize As Integer = 50
+    Dim MaxCSVSize As Integer
+    Dim ManagerPath As String = "C:\Program Files (x86)\Avaya\IP Office\Manager\Manager.exe"
     '///LICENSING CODE///
     'create code for applicationsecret
     Dim applicationSecret() As Byte = Convert.FromBase64String("c3ZoNKo2mUG1wswVtsHPDQ==")
@@ -391,7 +392,7 @@ Public Class Main
         End Try
 
         Try
-            Process.Start("C:\Program Files (x86)\Avaya\IP Office\Manager\Manager.exe")
+            Process.Start(ManagerPath)
         Catch ex As Exception
             exception = ex.Message
             HandleError()
