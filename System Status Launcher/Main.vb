@@ -1,17 +1,8 @@
 ﻿Imports System.Text.RegularExpressions
 Imports Habanero.Licensing.Validation
+Imports IPO_Toolbox.Functions
+Imports IPO_Toolbox.GlobalVars
 Public Class Main
-    'Define global variables
-    Dim systemlist As New DataTable
-    Dim file As String
-    Dim exception As String
-    Dim ip As String
-    Dim keyCombo As New List(Of Keys)({Keys.Shift, Keys.Enter})
-    Dim currentKeys As New List(Of Keys)
-    Dim DarkMode As Boolean
-    Dim CSVLineCount As Integer = 0
-    Dim MaxCSVSize As Integer
-    Dim ManagerPath As String = "C:\Program Files (x86)\Avaya\IP Office\Manager\Manager.exe"
     '///LICENSING CODE///
     'create code for applicationsecret
     Dim applicationSecret() As Byte = Convert.FromBase64String("c3ZoNKo2mUG1wswVtsHPDQ==")
@@ -130,11 +121,7 @@ Public Class Main
         End Try
     End Sub
 
-    'Error handling function. Called in try catch statements to display an error message.
-    Public Function HandleError()
-        MsgBox(Buttons:=vbCritical, Title:="Error", Prompt:="An error has occurred: " & exception)
-        Return True
-    End Function
+
 
     'Function to manually check for updates
     Private Sub ManualCheckForUpdates()
@@ -381,24 +368,7 @@ Public Class Main
         End If
     End Sub
 
-    Public Sub LaunchManager()
-        Try
-            ip = DataGridView1.CurrentRow.Cells(3).Value
-            My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Avaya\IP400\Manager\", "BCASTIPAddr", ip)
-            My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Avaya\IP400\Manager\", "LastLoggedInUser", TextBoxUsername.Text)
-        Catch ex As Exception
-            exception = ex.Message
-            HandleError()
-        End Try
 
-        Try
-            Process.Start(ManagerPath)
-        Catch ex As Exception
-            exception = ex.Message
-            HandleError()
-        End Try
-        Me.WindowState = FormWindowState.Minimized
-    End Sub
 
     Public Async Sub CopyPassword()
         Try
