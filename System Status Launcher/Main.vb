@@ -72,124 +72,6 @@ Public Class Main
     End Sub
     '////END LICENSING CODE////
 
-    'Function to launch system status with our IP, Username and Password
-    Public Sub LaunchSSA()
-        Try
-            ip = DataGridView1.CurrentRow.Cells(3).Value
-            Dim password As String = TextBoxPassword.Text
-            Dim username As String = TextBoxUsername.Text
-            Dim programfiles As String = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles)
-            Dim arguments As String = "-jar " + """" + programfiles + "\Avaya\IP Office\System Status\ssaviewer.jar"" LogonIPAddr=" + ip + " LogonUser=" + username + " LogonPassword=" + password
-            Process.Start("javaw.exe", arguments)
-        Catch ex As Exception
-            exception = ex.Message
-            HandleError()
-        End Try
-        Me.WindowState = FormWindowState.Minimized
-    End Sub
-
-    'Function to read CSV file and load into Datagridview
-    Public Sub LoadCsv()
-        Try
-            ToolStripStatusLabel1.Text = My.Settings.CSVPath
-            systemlist.Rows.Clear()
-            Dim csvreader As New IO.StreamReader(My.Settings.CSVPath, System.Text.Encoding.Default)
-            Dim csvline As String = ""
-            Do 'Until CSVLineCount = MaxCSVSize
-                CSVLineCount = CSVLineCount + 1
-                csvline = csvreader.ReadLine
-                If csvline Is Nothing Then Exit Do
-                Dim thecolumns() As String = csvline.Split(",")
-                Dim newrow As DataRow = systemlist.NewRow
-                newrow("System Name") = thecolumns(0)
-                newrow("MAC Address") = thecolumns(1)
-                newrow("System Type") = thecolumns(2)
-                newrow("IP Address") = thecolumns(3)
-                newrow("Version") = thecolumns(4)
-                newrow("Mode") = thecolumns(5)
-                systemlist.Rows.Add(newrow)
-            Loop
-            csvreader.Close()
-            'load data table into the data grid
-            DataGridView1.DataSource = systemlist
-            DataGridView1.Sort(DataGridView1.Columns("System Name"), ComponentModel.ListSortDirection.Ascending)
-            ButtonCopyIP.Visible = True
-            ReloadKnownUnitsFileToolStripMenuItem.Enabled = True
-        Catch ex As Exception
-            exception = ex.Message
-            HandleError()
-        End Try
-    End Sub
-
-
-
-    'Function to manually check for updates
-    Private Sub ManualCheckForUpdates()
-        Try
-            Dim updaterequest As System.Net.HttpWebRequest = System.Net.HttpWebRequest.Create("http://dl.ipoffice.tools/version.txt")
-            Dim updateresponse As System.Net.HttpWebResponse = updaterequest.GetResponse
-
-            Dim updateSR As System.IO.StreamReader = New System.IO.StreamReader(updateresponse.GetResponseStream)
-
-            Dim newestversion As String = updateSR.ReadToEnd
-            Dim currentversion As String = Application.ProductVersion
-
-            If newestversion <= currentversion Then
-                MsgBox(Prompt:="This is the latest version!")
-                ToolStripStatusLabelUpdate.Text = Nothing
-            ElseIf newestversion > currentversion Then
-                MsgBox(Prompt:="There is a new version available! Please download version " & newestversion & " from https://ipoffice.tools")
-                ToolStripStatusLabelUpdate.Text = "Update Available! (v" & newestversion & ")"
-            End If
-        Catch ex As Exception
-            MsgBox(Buttons:=vbCritical, Title:="Error!", Prompt:="Unable to connect to the update server. Please check your network connection!")
-        End Try
-
-    End Sub
-
-    'Function to automatically check for updates
-    Private Sub AutoCheckForUpdates()
-        Try
-            Dim updaterequest As System.Net.HttpWebRequest = System.Net.HttpWebRequest.Create("http://dl.ipoffice.tools/version.txt")
-            Dim updateresponse As System.Net.HttpWebResponse = updaterequest.GetResponse
-
-            Dim updateSR As System.IO.StreamReader = New System.IO.StreamReader(updateresponse.GetResponseStream)
-
-            Dim newestversion As String = updateSR.ReadToEnd
-            Dim currentversion As String = Application.ProductVersion
-
-            If newestversion > currentversion Then
-                ToolStripStatusLabelUpdate.Text = "Update Available! (v" & newestversion & ")"
-            End If
-        Catch ex As Exception
-            ToolStripStatusLabelUpdate.IsLink = False
-            ToolStripStatusLabelUpdate.Text = "Cannot connect to update server. Check network connection!"
-        End Try
-
-    End Sub
-
-    'Function to minimize to tray
-    Private Sub MinimizeToTray()
-        NotifyIcon1.Visible = True
-        NotifyIcon1.Icon = Me.Icon 'SystemIcons.Application
-        NotifyIcon1.Text = Application.ProductName
-        NotifyIcon1.BalloonTipIcon = ToolTipIcon.Info
-        NotifyIcon1.BalloonTipText = "Please double click the icon to open"
-        NotifyIcon1.BalloonTipTitle = Application.ProductName & " is now minimized to the tray."
-        NotifyIcon1.ShowBalloonTip(3000)
-        Me.Hide()
-        ShowInTaskbar = False
-    End Sub
-
-    'Function to open from the system tray
-    Private Sub OpenFromTray()
-        ShowInTaskbar = True
-        Me.Show()
-        Me.WindowState = FormWindowState.Normal
-        NotifyIcon1.Visible = False
-        TextBoxSearch.Select()
-    End Sub
-
     Private Sub NotifyIcon1_DoubleClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles NotifyIcon1.DoubleClick
         OpenFromTray()
     End Sub
@@ -209,7 +91,7 @@ Public Class Main
 
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        DoLicenseCheck()
+        'DoLicenseCheck()
         Me.KeyPreview = True
 
         If My.Settings.UpgradeRequired = True Then
@@ -368,30 +250,6 @@ Public Class Main
         End If
     End Sub
 
-
-
-    Public Async Sub CopyPassword()
-        Try
-            Clipboard.SetDataObject(TextBoxPassword.Text, True, 5, 100)
-        Catch ex As Exception
-            exception = ex.Message
-            MsgBox(Buttons:=vbCritical, Title:="Error!", Prompt:="An error occured while copying the password, though it may still have copied successfully. Are any remote desktop apps running (e.g LogMeIn Rescue, Teamviewer)?")
-        End Try
-        NotifyIcon1.Visible = True
-        NotifyIcon1.Icon = Me.Icon
-        NotifyIcon1.Text = Application.ProductName
-        NotifyIcon1.BalloonTipIcon = ToolTipIcon.Info
-        NotifyIcon1.BalloonTipText = "The password has been copied to the clipboard. It will be removed from the clipboard after 3 minutes."
-        NotifyIcon1.BalloonTipTitle = "IPO Toolbox"
-        NotifyIcon1.ShowBalloonTip(5000)
-        Await Task.Delay(180000)
-        Clipboard.Clear()
-        NotifyIcon1.BalloonTipText = "The password has been removed from the clipboard for your security!"
-        NotifyIcon1.BalloonTipTitle = "IPO Toolbox"
-        NotifyIcon1.ShowBalloonTip(5000)
-        NotifyIcon1.Visible = False
-    End Sub
-
     Private Sub ButtonLaunchManager_Click(sender As Object, e As EventArgs) Handles ButtonLaunchManager.Click
         LaunchManager()
         CopyPassword()
@@ -407,29 +265,6 @@ Public Class Main
 
     Private Sub DarkModeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DarkModeToolStripMenuItem.Click
         ToggleDarkMode()
-    End Sub
-
-    Public Sub ToggleDarkMode()
-        If DarkMode = False Then
-            DarkMode = True
-            DarkModeToolStripMenuItem.Checked = True
-            Me.BackColor = Color.FromArgb(180, 180, 180)
-            DataGridView1.DefaultCellStyle.BackColor = Color.FromArgb(100, 100, 100)
-            DataGridView1.DefaultCellStyle.ForeColor = Color.White
-            DataGridView1.DefaultCellStyle.SelectionBackColor = Color.Black
-            DataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(100, 100, 100)
-            DataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White
-            DataGridView1.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(100, 100, 100)
-            DataGridView1.RowHeadersDefaultCellStyle.ForeColor = Color.White
-            MenuStrip1.BackColor = Color.FromArgb(100, 100, 100)
-            MenuStrip1.ForeColor = Color.White
-            StatusStrip1.BackColor = Color.FromArgb(100, 100, 100)
-            StatusStrip1.ForeColor = Color.White
-        ElseIf DarkMode = True Then
-            MsgBox(Prompt:="I don't know how to turn off dark mode yet, sorry. :( Will restart.")
-            Application.Restart()
-        End If
-
     End Sub
 
     Private Sub FixVoicemailProClientToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FixVoicemailProClientToolStripMenuItem.Click
