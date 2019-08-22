@@ -51,8 +51,7 @@ Public Class Licensing
             result = Licensing.Validator.ActivateTrial(45)
             Main.Enabled = False
             Main.Hide()
-            LicensePrompt.Show()
-
+            LicensePrompt.ShowDialog()
             'or save license
             Dim userLicense As String = ""
             result = Licensing.Validator.CheckLicense(userLicense)
@@ -64,6 +63,7 @@ Public Class Licensing
         End If
         If (result.State = LicenseState.Valid) Then
             'activate product
+            MsgBox(Prompt:="Valid license apparently")
             If (Licensing.Validator.IsEdition("Pro")) Then
                 'activate pro features...
             End If

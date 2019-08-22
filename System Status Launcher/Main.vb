@@ -7,7 +7,6 @@ Public Class Main
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         DoLicenseCheck()
         Me.KeyPreview = True
-
         If My.Settings.UpgradeRequired = True Then
             My.Settings.Upgrade()
             My.Settings.UpgradeRequired = False

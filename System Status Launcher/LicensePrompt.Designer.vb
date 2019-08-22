@@ -27,6 +27,7 @@ Partial Class LicensePrompt
         Me.ButtonTrial = New System.Windows.Forms.Button()
         Me.ButtonFullKey = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.ButtonExit = New System.Windows.Forms.Button()
         Me.SuspendLayout
         '
         'TextBoxLicenseKey
@@ -57,7 +58,7 @@ Partial Class LicensePrompt
         '
         'ButtonFullKey
         '
-        Me.ButtonFullKey.Location = New System.Drawing.Point(379, 230)
+        Me.ButtonFullKey.Location = New System.Drawing.Point(222, 230)
         Me.ButtonFullKey.Name = "ButtonFullKey"
         Me.ButtonFullKey.Size = New System.Drawing.Size(136, 23)
         Me.ButtonFullKey.TabIndex = 3
@@ -74,12 +75,22 @@ Partial Class LicensePrompt
         Me.Label1.Text = "IPO Toolbox is unlicensed!"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"Please activate a 30-day trial or enter your licens"& _ 
     "e key!"
         '
+        'ButtonExit
+        '
+        Me.ButtonExit.Location = New System.Drawing.Point(446, 230)
+        Me.ButtonExit.Name = "ButtonExit"
+        Me.ButtonExit.Size = New System.Drawing.Size(69, 23)
+        Me.ButtonExit.TabIndex = 5
+        Me.ButtonExit.Text = "Exit"
+        Me.ButtonExit.UseVisualStyleBackColor = true
+        '
         'LicensePrompt
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(587, 265)
         Me.ControlBox = false
+        Me.Controls.Add(Me.ButtonExit)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.ButtonFullKey)
         Me.Controls.Add(Me.ButtonTrial)
@@ -100,4 +111,5 @@ End Sub
     Friend WithEvents ButtonTrial As Button
     Friend WithEvents ButtonFullKey As Button
     Friend WithEvents Label1 As Label
+    Friend WithEvents ButtonExit As Button
 End Class
