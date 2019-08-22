@@ -3,27 +3,9 @@ Imports IPO_Toolbox.Licensing
 Imports IPO_Toolbox.Functions
 Imports IPO_Toolbox.GlobalVars
 Public Class Main
-
-    Private Sub NotifyIcon1_DoubleClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles NotifyIcon1.DoubleClick
-        OpenFromTray()
-    End Sub
-
-    Private Sub ContextMenuStrip1_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles ContextMenuStrip1.LostFocus
-        ContextMenuStrip1.Close()
-    End Sub
-
-    Private Sub NotifyIcon1_Click(ByVal sender As Object, ByVal e As MouseEventArgs) Handles NotifyIcon1.MouseClick
-        If e.Button = Windows.Forms.MouseButtons.Right Then
-            ContextMenuStrip1.Show(Cursor.Position)
-        Else
-            ContextMenuStrip1.Hide()
-        End If
-
-    End Sub
-
-
+    '///Do stuff on load
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'DoLicenseCheck()
+        DoLicenseCheck()
         Me.KeyPreview = True
 
         If My.Settings.UpgradeRequired = True Then
@@ -206,4 +188,22 @@ Public Class Main
     Private Sub ReportABugToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReportABugToolStripMenuItem.Click
         Process.Start("https://ipoffice.tools/bugreport")
     End Sub
+
+    Private Sub NotifyIcon1_DoubleClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles NotifyIcon1.DoubleClick
+        OpenFromTray()
+    End Sub
+
+    Private Sub ContextMenuStrip1_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles ContextMenuStrip1.LostFocus
+        ContextMenuStrip1.Close()
+    End Sub
+
+    Private Sub NotifyIcon1_Click(ByVal sender As Object, ByVal e As MouseEventArgs) Handles NotifyIcon1.MouseClick
+        If e.Button = Windows.Forms.MouseButtons.Right Then
+            ContextMenuStrip1.Show(Cursor.Position)
+        Else
+            ContextMenuStrip1.Hide()
+        End If
+
+    End Sub
+
 End Class

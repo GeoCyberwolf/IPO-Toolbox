@@ -2,15 +2,16 @@
 Public Class Licensing
     '///LICENSING CODE///
     'create code for applicationsecret
-    Dim applicationSecret() As Byte = Convert.FromBase64String("c3ZoNKo2mUG1wswVtsHPDQ==")
+    Public Shared applicationSecret() As Byte = Convert.FromBase64String("c3ZoNKo2mUG1wswVtsHPDQ==")
     'create code for public key
-    Dim publicKey() As Byte = Convert.FromBase64String("BgIAAACkAABSU0ExAAIAAAEAAQA9uPZd4CiX3PM4ha6kGnhE1EhQqwpraGdlMzZWBEM0L20jG8zpnRnR6IpDXLyyzzBdPEVOk0WFgBsjQQ2O7C/q")
+    Public Shared publicKey() As Byte = Convert.FromBase64String("BgIAAACkAABSU0ExAAIAAAEAAQA9uPZd4CiX3PM4ha6kGnhE1EhQqwpraGdlMzZWBEM0L20jG8zpnRnR6IpDXLyyzzBdPEVOk0WFgBsjQQ2O7C/q")
 
-    Private ReadOnly Property Validator As Habanero.Licensing.Validation.LicenseValidator
+    Public Shared ReadOnly Property Validator As Habanero.Licensing.Validation.LicenseValidator
         Get
             'this version is for file system - Isolated storage is anther option
-            Return New Habanero.Licensing.Validation.LicenseValidator(Habanero.Licensing.Validation.LicenseLocation.File, "Path to license file", "IPO Toolbox", publicKey, applicationSecret, ThisVersion)
+            Return New Habanero.Licensing.Validation.LicenseValidator(Habanero.Licensing.Validation.LicenseLocation.File, "Path to license file", "IPO Toolbox", Licensing.publicKey, Licensing.applicationSecret, ThisVersion)
         End Get
+
     End Property
 
     Private Shared ReadOnly Property ThisVersion As Version
@@ -22,8 +23,8 @@ Public Class Licensing
         End Get
     End Property
 
-    Private Sub DoLicenseCheck()
-        Dim result As Habanero.Licensing.Validation.LicenseValidationResult = Validator.CheckLicense()
+    Public Shared Sub DoLicenseCheck()
+        Dim result As Habanero.Licensing.Validation.LicenseValidationResult = Licensing.Validator.CheckLicense()
         If (result.State = Habanero.Licensing.Validation.LicenseState.Invalid) Then
             If (result.Issues.Contains(LicenseIssue.NoLicenseInfo)) Then
                 'inform user there is no license info
@@ -47,22 +48,23 @@ Public Class Licensing
 
             'prompt user for trial or to insert license info then decide what to do
             'activate trial
-            result = Validator.ActivateTrial(45)
+            result = Licensing.Validator.ActivateTrial(45)
             Main.Enabled = False
             Main.Hide()
             LicensePrompt.Show()
+
             'or save license
             Dim userLicense As String = ""
-            result = Validator.CheckLicense(userLicense)
+            result = Licensing.Validator.CheckLicense(userLicense)
             'decide if you want to save the license...
-            Validator.SaveLicense(userLicense)
+            Licensing.Validator.SaveLicense(userLicense)
         End If
         If (result.State = LicenseState.Trial) Then
             'activate trial features
         End If
         If (result.State = LicenseState.Valid) Then
             'activate product
-            If (Validator.IsEdition("Pro")) Then
+            If (Licensing.Validator.IsEdition("Pro")) Then
                 'activate pro features...
             End If
         End If
