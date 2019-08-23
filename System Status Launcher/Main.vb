@@ -4,7 +4,7 @@ Imports IPO_Toolbox.Functions
 Imports IPO_Toolbox.GlobalVars
 Public Class Main
     '///Do stuff on load
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         DoLicenseCheck()
         Me.KeyPreview = True
         If My.Settings.UpgradeRequired = True Then

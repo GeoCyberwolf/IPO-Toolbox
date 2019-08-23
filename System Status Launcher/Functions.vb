@@ -30,9 +30,8 @@ Public Class Functions
     Public Shared Sub LaunchSSA()
         Try
             ip = Main.DataGridView1.CurrentRow.Cells(3).Value
-            Dim password As String = Main.TextBoxPassword.Text
-            Dim username As String = Main.TextBoxUsername.Text
-            Dim programfiles As String = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles)
+            password = Main.TextBoxPassword.Text
+            username = Main.TextBoxUsername.Text
             Dim arguments As String = "-jar " + """" + programfiles + "\Avaya\IP Office\System Status\ssaviewer.jar"" LogonIPAddr=" + ip + " LogonUser=" + username + " LogonPassword=" + password
             Process.Start("javaw.exe", arguments)
         Catch ex As Exception
