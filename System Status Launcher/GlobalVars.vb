@@ -13,4 +13,5 @@
     Public Shared programfiles As String = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles)
     Public Shared username As String
     Public Shared password As String
+    Public Shared LicenseKey As String
 End Class

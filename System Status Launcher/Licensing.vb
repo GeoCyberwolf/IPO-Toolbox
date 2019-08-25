@@ -1,5 +1,6 @@
 ﻿Imports Habanero.Licensing.Validation
 Public Class Licensing
+    Public Shared result As Habanero.Licensing.Validation.LicenseValidationResult = Licensing.Validator.CheckLicense()
     '///LICENSING CODE///
     'create code for applicationsecret
     Public Shared applicationSecret() As Byte = Convert.FromBase64String("c3ZoNKo2mUG1wswVtsHPDQ==")
@@ -9,7 +10,7 @@ Public Class Licensing
     Public Shared ReadOnly Property Validator As Habanero.Licensing.Validation.LicenseValidator
         Get
             'this version is for file system - Isolated storage is anther option
-            Return New Habanero.Licensing.Validation.LicenseValidator(Habanero.Licensing.Validation.LicenseLocation.File, "Path to license file", "IPO Toolbox", Licensing.publicKey, Licensing.applicationSecret, ThisVersion)
+            Return New Habanero.Licensing.Validation.LicenseValidator(Habanero.Licensing.Validation.LicenseLocation.File, "license.lic", "IPO Toolbox", Licensing.publicKey, Licensing.applicationSecret, ThisVersion)
         End Get
 
     End Property
@@ -24,7 +25,6 @@ Public Class Licensing
     End Property
 
     Public Shared Sub DoLicenseCheck()
-        Dim result As Habanero.Licensing.Validation.LicenseValidationResult = Licensing.Validator.CheckLicense()
         If (result.State = Habanero.Licensing.Validation.LicenseState.Invalid) Then
             If (result.Issues.Contains(LicenseIssue.NoLicenseInfo)) Then
                 'inform user there is no license info
@@ -47,8 +47,7 @@ Public Class Licensing
             End If
 
             'prompt user for trial or to insert license info then decide what to do
-            'activate trial
-            result = Licensing.Validator.ActivateTrial(45)
+
             Main.Enabled = False
             Main.Hide()
             LicensePrompt.ShowDialog()
@@ -68,6 +67,10 @@ Public Class Licensing
                 'activate pro features...
             End If
         End If
+    End Sub
+
+    Public Shared Sub ActivateTrial()
+        result = Licensing.Validator.ActivateTrial(30)
     End Sub
     '////END LICENSING CODE////
 End Class

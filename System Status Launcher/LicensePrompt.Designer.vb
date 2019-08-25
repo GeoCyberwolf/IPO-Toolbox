@@ -32,35 +32,39 @@ Partial Class LicensePrompt
         '
         'TextBoxLicenseKey
         '
-        Me.TextBoxLicenseKey.Location = New System.Drawing.Point(46, 107)
+        Me.TextBoxLicenseKey.Location = New System.Drawing.Point(69, 165)
+        Me.TextBoxLicenseKey.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TextBoxLicenseKey.Multiline = true
         Me.TextBoxLicenseKey.Name = "TextBoxLicenseKey"
-        Me.TextBoxLicenseKey.Size = New System.Drawing.Size(469, 103)
+        Me.TextBoxLicenseKey.Size = New System.Drawing.Size(702, 156)
         Me.TextBoxLicenseKey.TabIndex = 0
         '
         'LabelEnterKey
         '
         Me.LabelEnterKey.AutoSize = true
-        Me.LabelEnterKey.Location = New System.Drawing.Point(43, 91)
+        Me.LabelEnterKey.Location = New System.Drawing.Point(64, 140)
+        Me.LabelEnterKey.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LabelEnterKey.Name = "LabelEnterKey"
-        Me.LabelEnterKey.Size = New System.Drawing.Size(96, 13)
+        Me.LabelEnterKey.Size = New System.Drawing.Size(141, 20)
         Me.LabelEnterKey.TabIndex = 1
         Me.LabelEnterKey.Text = "Enter License Key:"
         '
         'ButtonTrial
         '
-        Me.ButtonTrial.Location = New System.Drawing.Point(46, 230)
+        Me.ButtonTrial.Location = New System.Drawing.Point(69, 354)
+        Me.ButtonTrial.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.ButtonTrial.Name = "ButtonTrial"
-        Me.ButtonTrial.Size = New System.Drawing.Size(121, 23)
+        Me.ButtonTrial.Size = New System.Drawing.Size(182, 35)
         Me.ButtonTrial.TabIndex = 2
         Me.ButtonTrial.Text = "Activate 30-Day Trial"
         Me.ButtonTrial.UseVisualStyleBackColor = true
         '
         'ButtonFullKey
         '
-        Me.ButtonFullKey.Location = New System.Drawing.Point(222, 230)
+        Me.ButtonFullKey.Location = New System.Drawing.Point(333, 354)
+        Me.ButtonFullKey.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.ButtonFullKey.Name = "ButtonFullKey"
-        Me.ButtonFullKey.Size = New System.Drawing.Size(136, 23)
+        Me.ButtonFullKey.Size = New System.Drawing.Size(204, 35)
         Me.ButtonFullKey.TabIndex = 3
         Me.ButtonFullKey.Text = "Activate Full License Key"
         Me.ButtonFullKey.UseVisualStyleBackColor = true
@@ -68,27 +72,29 @@ Partial Class LicensePrompt
         'Label1
         '
         Me.Label1.AutoSize = true
-        Me.Label1.Location = New System.Drawing.Point(149, 34)
+        Me.Label1.Location = New System.Drawing.Point(224, 52)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(264, 39)
+        Me.Label1.Size = New System.Drawing.Size(388, 60)
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "IPO Toolbox is unlicensed!"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"Please activate a 30-day trial or enter your licens"& _ 
     "e key!"
         '
         'ButtonExit
         '
-        Me.ButtonExit.Location = New System.Drawing.Point(446, 230)
+        Me.ButtonExit.Location = New System.Drawing.Point(669, 354)
+        Me.ButtonExit.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.ButtonExit.Name = "ButtonExit"
-        Me.ButtonExit.Size = New System.Drawing.Size(69, 23)
+        Me.ButtonExit.Size = New System.Drawing.Size(104, 35)
         Me.ButtonExit.TabIndex = 5
         Me.ButtonExit.Text = "Exit"
         Me.ButtonExit.UseVisualStyleBackColor = true
         '
         'LicensePrompt
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9!, 20!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(587, 265)
+        Me.ClientSize = New System.Drawing.Size(880, 408)
         Me.ControlBox = false
         Me.Controls.Add(Me.ButtonExit)
         Me.Controls.Add(Me.Label1)
@@ -96,6 +102,7 @@ Partial Class LicensePrompt
         Me.Controls.Add(Me.ButtonTrial)
         Me.Controls.Add(Me.LabelEnterKey)
         Me.Controls.Add(Me.TextBoxLicenseKey)
+        Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.MaximizeBox = false
         Me.MinimizeBox = false
         Me.Name = "LicensePrompt"
