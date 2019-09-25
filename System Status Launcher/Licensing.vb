@@ -1,6 +1,5 @@
 ﻿Imports Habanero.Licensing.Validation
 Public Class Licensing
-    Public Shared result As Habanero.Licensing.Validation.LicenseValidationResult = Licensing.Validator.CheckLicense()
     '///LICENSING CODE///
     'create code for applicationsecret
     Public Shared applicationSecret() As Byte = Convert.FromBase64String("c3ZoNKo2mUG1wswVtsHPDQ==")
@@ -25,10 +24,12 @@ Public Class Licensing
     End Property
 
     Public Shared Sub DoLicenseCheck()
+        Dim result As Habanero.Licensing.Validation.LicenseValidationResult = Licensing.Validator.CheckLicense()
         If (result.State = Habanero.Licensing.Validation.LicenseState.Invalid) Then
             If (result.Issues.Contains(LicenseIssue.NoLicenseInfo)) Then
                 'inform user there is no license info
                 MsgBox(Prompt:="No valid license found!")
+                LicensePrompt.ButtonTrial.Enabled = True
             Else
                 If (result.Issues.Contains(LicenseIssue.ExpiredDateSoft)) Then
                     'inform user that their license has expired but
@@ -55,10 +56,16 @@ Public Class Licensing
             Dim userLicense As String = ""
             result = Licensing.Validator.CheckLicense(userLicense)
             'decide if you want to save the license...
-            Licensing.Validator.SaveLicense(userLicense)
+            'Licensing.Validator.SaveLicense(userLicense)
         End If
         If (result.State = LicenseState.Trial) Then
-            'activate trial features
+            Dim TrialExpiry As Date = CDate(Licensing.Validator.CheckLicense.ExpirationDate)
+            Dim CurrentDate As Date = CDate(DateTime.Now.ToShortDateString)
+            Dim DaysRemaining As Integer = (TrialExpiry - CurrentDate).TotalDays
+            MsgBox(Buttons:=vbInformation, Prompt:=DaysRemaining & " days left of the trial!")
+            Main.Text = Main.Text & " (Trial License! " & DaysRemaining & " days left!)"
+            Main.Enabled = True
+
         End If
         If (result.State = LicenseState.Valid) Then
             'activate product
@@ -70,6 +77,7 @@ Public Class Licensing
     End Sub
 
     Public Shared Sub ActivateTrial()
+        Dim result As Habanero.Licensing.Validation.LicenseValidationResult = Licensing.Validator.CheckLicense()
         result = Licensing.Validator.ActivateTrial(30)
     End Sub
     '////END LICENSING CODE////

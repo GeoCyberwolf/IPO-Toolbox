@@ -51,6 +51,7 @@ Partial Class LicensePrompt
         '
         'ButtonTrial
         '
+        Me.ButtonTrial.Enabled = false
         Me.ButtonTrial.Location = New System.Drawing.Point(69, 354)
         Me.ButtonTrial.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.ButtonTrial.Name = "ButtonTrial"

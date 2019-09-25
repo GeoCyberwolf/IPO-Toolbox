@@ -5,6 +5,8 @@ Imports IPO_Toolbox.GlobalVars
 Public Class Main
     '///Do stuff on load
     Private Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.Text = Application.ProductName & " BETA - v" & Application.ProductVersion
+        Me.Enabled = False
         DoLicenseCheck()
         Me.KeyPreview = True
         If My.Settings.UpgradeRequired = True Then
@@ -16,8 +18,6 @@ Public Class Main
             SingleCellSelectToolStripMenuItem.Checked = True
             DataGridView1.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect
         End If
-
-        Me.Text = Application.ProductName & " BETA - v" & Application.ProductVersion
         TextBoxSearch.Select()
         AutoCheckForUpdates()
         'Set default username
