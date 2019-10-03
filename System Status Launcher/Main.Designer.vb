@@ -37,14 +37,14 @@ Partial Class Main
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.MinimizeToTrayToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AddKnownUnitsEntryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FixVoicemailProClientToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OptionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SingleCellSelectToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DarkModeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.ResetAllSettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AddKnownUnitsEntryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.FixVoicemailProClientToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CheckForUpdatesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -69,10 +69,10 @@ Partial Class Main
         Me.ButtonCopyPassword = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.StatusStrip1.SuspendLayout
-        Me.MenuStrip1.SuspendLayout
-        Me.ContextMenuStrip1.SuspendLayout
-        Me.SuspendLayout
+        Me.StatusStrip1.SuspendLayout()
+        Me.MenuStrip1.SuspendLayout()
+        Me.ContextMenuStrip1.SuspendLayout()
+        Me.SuspendLayout()
         '
         'DataGridView1
         '
@@ -171,6 +171,27 @@ Partial Class Main
         Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
+        'ToolsToolStripMenuItem
+        '
+        Me.ToolsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddKnownUnitsEntryToolStripMenuItem, Me.FixVoicemailProClientToolStripMenuItem})
+        Me.ToolsToolStripMenuItem.Name = "ToolsToolStripMenuItem"
+        Me.ToolsToolStripMenuItem.Size = New System.Drawing.Size(46, 20)
+        Me.ToolsToolStripMenuItem.Text = "Tools"
+        '
+        'AddKnownUnitsEntryToolStripMenuItem
+        '
+        Me.AddKnownUnitsEntryToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.AddKnownUnitsEntryToolStripMenuItem.Name = "AddKnownUnitsEntryToolStripMenuItem"
+        Me.AddKnownUnitsEntryToolStripMenuItem.Size = New System.Drawing.Size(198, 22)
+        Me.AddKnownUnitsEntryToolStripMenuItem.Text = "Add Known Units Entry"
+        Me.AddKnownUnitsEntryToolStripMenuItem.Visible = False
+        '
+        'FixVoicemailProClientToolStripMenuItem
+        '
+        Me.FixVoicemailProClientToolStripMenuItem.Name = "FixVoicemailProClientToolStripMenuItem"
+        Me.FixVoicemailProClientToolStripMenuItem.Size = New System.Drawing.Size(198, 22)
+        Me.FixVoicemailProClientToolStripMenuItem.Text = "Fix Voicemail Pro Client"
+        '
         'OptionsToolStripMenuItem
         '
         Me.OptionsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SingleCellSelectToolStripMenuItem, Me.DarkModeToolStripMenuItem, Me.ToolStripSeparator2, Me.ResetAllSettingsToolStripMenuItem})
@@ -202,25 +223,6 @@ Partial Class Main
         Me.ResetAllSettingsToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ResetAllSettingsToolStripMenuItem.Text = "Reset All Settings"
         '
-        'ToolsToolStripMenuItem
-        '
-        Me.ToolsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddKnownUnitsEntryToolStripMenuItem, Me.FixVoicemailProClientToolStripMenuItem})
-        Me.ToolsToolStripMenuItem.Name = "ToolsToolStripMenuItem"
-        Me.ToolsToolStripMenuItem.Size = New System.Drawing.Size(47, 20)
-        Me.ToolsToolStripMenuItem.Text = "Tools"
-        '
-        'AddKnownUnitsEntryToolStripMenuItem
-        '
-        Me.AddKnownUnitsEntryToolStripMenuItem.Name = "AddKnownUnitsEntryToolStripMenuItem"
-        Me.AddKnownUnitsEntryToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
-        Me.AddKnownUnitsEntryToolStripMenuItem.Text = "Add Known Units Entry"
-        '
-        'FixVoicemailProClientToolStripMenuItem
-        '
-        Me.FixVoicemailProClientToolStripMenuItem.Name = "FixVoicemailProClientToolStripMenuItem"
-        Me.FixVoicemailProClientToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
-        Me.FixVoicemailProClientToolStripMenuItem.Text = "Fix Voicemail Pro Client"
-        '
         'HelpToolStripMenuItem
         '
         Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem, Me.CheckForUpdatesToolStripMenuItem, Me.ViewChangelogToolStripMenuItem, Me.ToolStripSeparator4, Me.ReportABugToolStripMenuItem, Me.ToolStripSeparator3, Me.BuyMeACoffeeToolStripMenuItem})
@@ -231,41 +233,41 @@ Partial Class Main
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'CheckForUpdatesToolStripMenuItem
         '
         Me.CheckForUpdatesToolStripMenuItem.Name = "CheckForUpdatesToolStripMenuItem"
-        Me.CheckForUpdatesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CheckForUpdatesToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
         Me.CheckForUpdatesToolStripMenuItem.Text = "Check for Updates"
         '
         'ViewChangelogToolStripMenuItem
         '
         Me.ViewChangelogToolStripMenuItem.Name = "ViewChangelogToolStripMenuItem"
-        Me.ViewChangelogToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ViewChangelogToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
         Me.ViewChangelogToolStripMenuItem.Text = "View Changelog"
         '
         'ToolStripSeparator4
         '
         Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
-        Me.ToolStripSeparator4.Size = New System.Drawing.Size(177, 6)
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(171, 6)
         '
         'ReportABugToolStripMenuItem
         '
         Me.ReportABugToolStripMenuItem.Name = "ReportABugToolStripMenuItem"
-        Me.ReportABugToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ReportABugToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
         Me.ReportABugToolStripMenuItem.Text = "Report a Bug"
         '
         'ToolStripSeparator3
         '
         Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(177, 6)
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(171, 6)
         '
         'BuyMeACoffeeToolStripMenuItem
         '
         Me.BuyMeACoffeeToolStripMenuItem.Name = "BuyMeACoffeeToolStripMenuItem"
-        Me.BuyMeACoffeeToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.BuyMeACoffeeToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
         Me.BuyMeACoffeeToolStripMenuItem.Text = "Buy me a coffee? :)"
         '
         'OpenFileDialog1
@@ -418,12 +420,12 @@ Partial Class Main
         Me.Name = "Main"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.StatusStrip1.ResumeLayout(False)
-        Me.StatusStrip1.PerformLayout
+        Me.StatusStrip1.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout
+        Me.MenuStrip1.PerformLayout()
         Me.ContextMenuStrip1.ResumeLayout(False)
         Me.ResumeLayout(False)
-        Me.PerformLayout
+        Me.PerformLayout()
 
     End Sub
 

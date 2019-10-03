@@ -21,7 +21,7 @@ Public Class VMProFix
 
     Private Sub Step2()
         'Step 2 Choose Regkey Backup Location
-        LabelInfo.Text = "The fist step is to backup the Voicemail Pro registry keys. Choose your backup location and click Continue"
+        LabelInfo.Text = "The first step is to backup the Voicemail Pro registry keys. Choose your backup location and click Continue"
         TextBoxRegkeyPath.Visible = True
         ButtonBrowse.Visible = True
         ButtonContinue.Enabled = False
@@ -103,5 +103,9 @@ Public Class VMProFix
 
     Private Sub ButtonFinish_Click(sender As Object, e As EventArgs) Handles ButtonFinish.Click
         Me.Close()
+    End Sub
+
+    Private Sub VMProFix_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class

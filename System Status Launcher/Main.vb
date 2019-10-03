@@ -5,9 +5,8 @@ Imports IPO_Toolbox.GlobalVars
 Public Class Main
     '///Do stuff on load
     Private Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.Text = Application.ProductName & " BETA - v" & Application.ProductVersion
-        Me.Enabled = False
-        DoLicenseCheck()
+        Me.Text = Application.ProductName & " BETA 1" '& Application.ProductVersion
+        'DoLicenseCheck()
         Me.KeyPreview = True
         If My.Settings.UpgradeRequired = True Then
             My.Settings.Upgrade()
@@ -23,6 +22,7 @@ Public Class Main
         'Set default username
         TextBoxUsername.Text = My.Settings.Username
 
+        BetaCheck()
         'Create columns
         With systemlist
             .Columns.Add("System Name", System.Type.GetType("System.String"))

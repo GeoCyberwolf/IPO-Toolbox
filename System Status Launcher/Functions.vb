@@ -1,19 +1,49 @@
 ﻿Imports IPO_Toolbox.GlobalVars
 Public Class Functions
+
+    Public Shared Sub BetaCheck()
+        Try
+            Dim betarequest As System.Net.HttpWebRequest = System.Net.HttpWebRequest.Create("http://dl.ipoffice.tools/beta.txt")
+            Dim betaresponse As System.Net.HttpWebResponse = betarequest.GetResponse
+
+            Dim betaSR As System.IO.StreamReader = New System.IO.StreamReader(betaresponse.GetResponseStream)
+
+
+            Dim betaresult As String = betaSR.ReadToEnd
+
+            If betaresult = "BetaOver" Then
+                Main.Enabled = False
+                Dim betamessage As String = "The Beta is now over. Please buy the full version from https://ipoffice.tools"
+                MsgBox(Buttons:=MsgBoxStyle.Critical, Prompt:=betamessage)
+                Main.Close()
+            ElseIf betaresult <> "1" Then
+                Main.Enabled = False
+                Dim betamessage As String = "This Beta version is no longer Valid."
+                MsgBox(Buttons:=MsgBoxStyle.Critical, Prompt:=betamessage)
+                Main.Close()
+                    End
+                End If
+        Catch ex As Exception
+            Main.Enabled = False
+            MsgBox(Prompt:="Unable to validate the Beta version. Please start the application again with a working internet connection.", MsgBoxStyle.SystemModal)
+            Main.Close()
+        End Try
+    End Sub
+
     Public Shared Sub LaunchManager()
         Try
             ip = Main.DataGridView1.CurrentRow.Cells(3).Value
             My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Avaya\IP400\Manager\", "BCASTIPAddr", ip)
             My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Avaya\IP400\Manager\", "LastLoggedInUser", Main.TextBoxUsername.Text)
         Catch ex As Exception
-            Exception = ex.Message
+            exception = ex.Message
             HandleError()
         End Try
 
         Try
             Process.Start(ManagerPath)
         Catch ex As Exception
-            Exception = ex.Message
+            exception = ex.Message
             HandleError()
         End Try
         Main.WindowState = FormWindowState.Minimized
@@ -182,7 +212,7 @@ Public Class Functions
             Main.StatusStrip1.BackColor = Color.FromArgb(100, 100, 100)
             Main.StatusStrip1.ForeColor = Color.White
         ElseIf DarkMode = True Then
-            MsgBox(Prompt:="I don't know how to turn off dark mode yet, sorry. :( Will restart.")
+            MsgBox(Prompt:="Application will now restart to turn off Dark Mode.")
             Application.Restart()
         End If
 
