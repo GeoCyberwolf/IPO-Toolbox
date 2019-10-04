@@ -3,7 +3,7 @@ Public Class Functions
 
     Public Shared Sub BetaCheck()
         Try
-            Dim betarequest As System.Net.HttpWebRequest = System.Net.HttpWebRequest.Create("http://dl.ipoffice.tools/beta.txt")
+            Dim betarequest As System.Net.HttpWebRequest = System.Net.HttpWebRequest.Create("https://dl.ipoffice.tools/beta.txt")
             Dim betaresponse As System.Net.HttpWebResponse = betarequest.GetResponse
 
             Dim betaSR As System.IO.StreamReader = New System.IO.StreamReader(betaresponse.GetResponseStream)
@@ -18,7 +18,7 @@ Public Class Functions
                 Main.Close()
             ElseIf betaresult <> "1" Then
                 Main.Enabled = False
-                Dim betamessage As String = "This Beta version is no longer Valid."
+                Dim betamessage As String = "This Beta version is no longer valid."
                 MsgBox(Buttons:=MsgBoxStyle.Critical, Prompt:=betamessage)
                 Main.Close()
                     End
