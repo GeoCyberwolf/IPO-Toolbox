@@ -8,7 +8,7 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("IPO Toolbox")>
+<Assembly: AssemblyTitle("IPO Toolbox BETA 1")>
 <Assembly: AssemblyDescription("")>
 <Assembly: AssemblyCompany("ipoffice.tools")>
 <Assembly: AssemblyProduct("IPO Toolbox")>
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("2.1.3.0")>
-<Assembly: AssemblyFileVersion("2.1.3.0")>
+<Assembly: AssemblyVersion("2.1.4.0")>
+<Assembly: AssemblyFileVersion("2.1.4.0")>

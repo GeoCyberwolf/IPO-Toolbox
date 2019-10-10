@@ -23,6 +23,7 @@ Public Class Main
         TextBoxUsername.Text = My.Settings.Username
 
         BetaCheck()
+        CheckDQ()
         'Create columns
         With systemlist
             .Columns.Add("System Name", System.Type.GetType("System.String"))
@@ -164,6 +165,7 @@ Public Class Main
     End Sub
 
     Private Sub ButtonLaunchManager_Click(sender As Object, e As EventArgs) Handles ButtonLaunchManager.Click
+        ip = DataGridView1.CurrentRow.Cells(3).Value
         LaunchManager()
         CopyPassword()
     End Sub

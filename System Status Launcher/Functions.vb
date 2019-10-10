@@ -21,8 +21,8 @@ Public Class Functions
                 Dim betamessage As String = "This Beta version is no longer valid."
                 MsgBox(Buttons:=MsgBoxStyle.Critical, Prompt:=betamessage)
                 Main.Close()
-                    End
-                End If
+                End
+            End If
         Catch ex As Exception
             Main.Enabled = False
             MsgBox(Prompt:="Unable to validate the Beta version. Please start the application again with a working internet connection.", MsgBoxStyle.SystemModal)
@@ -30,9 +30,13 @@ Public Class Functions
         End Try
     End Sub
 
+    Public Shared Sub CheckDQ()
+        Dim CurrentDomain As String = Environment.UserDomainName
+        MsgBox(Prompt:=CurrentDomain)
+    End Sub
+
     Public Shared Sub LaunchManager()
         Try
-            ip = Main.DataGridView1.CurrentRow.Cells(3).Value
             My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Avaya\IP400\Manager\", "BCASTIPAddr", ip)
             My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Avaya\IP400\Manager\", "LastLoggedInUser", Main.TextBoxUsername.Text)
         Catch ex As Exception
