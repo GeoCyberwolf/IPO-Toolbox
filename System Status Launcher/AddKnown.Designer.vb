@@ -69,12 +69,16 @@ Partial Class AddKnown
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(447, 130)
+        Me.ControlBox = False
         Me.Controls.Add(Me.ButtonOK)
         Me.Controls.Add(Me.LabelSystemIP)
         Me.Controls.Add(Me.TextBoxSystemIP)
         Me.Controls.Add(Me.AddKnownLabel)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "AddKnown"
+        Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
         Me.Text = "Add Known Units Entry"
         Me.ResumeLayout(False)
         Me.PerformLayout()
