@@ -30,11 +30,6 @@ Public Class Functions
         End Try
     End Sub
 
-    Public Shared Sub CheckDQ()
-        Dim CurrentDomain As String = Environment.UserDomainName
-        MsgBox(Prompt:=CurrentDomain)
-    End Sub
-
     Public Shared Sub LaunchManager()
         Try
             My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Avaya\IP400\Manager\", "BCASTIPAddr", ip)

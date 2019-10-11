@@ -45,7 +45,6 @@ Partial Class Main
         Me.DarkModeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.ResetAllSettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DQToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CheckForUpdatesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -128,7 +127,7 @@ Partial Class Main
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.ToolsToolStripMenuItem, Me.OptionsToolStripMenuItem, Me.DQToolStripMenuItem, Me.HelpToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.ToolsToolStripMenuItem, Me.OptionsToolStripMenuItem, Me.HelpToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(784, 24)
@@ -223,13 +222,6 @@ Partial Class Main
         Me.ResetAllSettingsToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ResetAllSettingsToolStripMenuItem.Text = "Reset All Settings"
         '
-        'DQToolStripMenuItem
-        '
-        Me.DQToolStripMenuItem.Name = "DQToolStripMenuItem"
-        Me.DQToolStripMenuItem.Size = New System.Drawing.Size(36, 20)
-        Me.DQToolStripMenuItem.Text = "DQ"
-        Me.DQToolStripMenuItem.Visible = False
-        '
         'HelpToolStripMenuItem
         '
         Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem, Me.CheckForUpdatesToolStripMenuItem, Me.ViewChangelogToolStripMenuItem, Me.ToolStripSeparator4, Me.ReportABugToolStripMenuItem, Me.ToolStripSeparator3, Me.BuyMeACoffeeToolStripMenuItem})
@@ -240,43 +232,43 @@ Partial Class Main
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'CheckForUpdatesToolStripMenuItem
         '
         Me.CheckForUpdatesToolStripMenuItem.Enabled = False
         Me.CheckForUpdatesToolStripMenuItem.Name = "CheckForUpdatesToolStripMenuItem"
-        Me.CheckForUpdatesToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
+        Me.CheckForUpdatesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.CheckForUpdatesToolStripMenuItem.Text = "Check for Updates"
         '
         'ViewChangelogToolStripMenuItem
         '
         Me.ViewChangelogToolStripMenuItem.Enabled = False
         Me.ViewChangelogToolStripMenuItem.Name = "ViewChangelogToolStripMenuItem"
-        Me.ViewChangelogToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
+        Me.ViewChangelogToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ViewChangelogToolStripMenuItem.Text = "View Changelog"
         '
         'ToolStripSeparator4
         '
         Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
-        Me.ToolStripSeparator4.Size = New System.Drawing.Size(171, 6)
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(177, 6)
         '
         'ReportABugToolStripMenuItem
         '
         Me.ReportABugToolStripMenuItem.Name = "ReportABugToolStripMenuItem"
-        Me.ReportABugToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
+        Me.ReportABugToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ReportABugToolStripMenuItem.Text = "Report a Bug"
         '
         'ToolStripSeparator3
         '
         Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(171, 6)
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(177, 6)
         '
         'BuyMeACoffeeToolStripMenuItem
         '
         Me.BuyMeACoffeeToolStripMenuItem.Name = "BuyMeACoffeeToolStripMenuItem"
-        Me.BuyMeACoffeeToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
+        Me.BuyMeACoffeeToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.BuyMeACoffeeToolStripMenuItem.Text = "Buy me a coffee? :)"
         '
         'OpenFileDialog1
@@ -482,5 +474,4 @@ Partial Class Main
     Friend WithEvents Label1 As Label
     Friend WithEvents ToolStripSeparator4 As ToolStripSeparator
     Friend WithEvents ReportABugToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents DQToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -23,7 +23,6 @@ Public Class Main
         TextBoxUsername.Text = My.Settings.Username
 
         BetaCheck()
-        CheckDQ()
         'Create columns
         With systemlist
             .Columns.Add("System Name", System.Type.GetType("System.String"))
