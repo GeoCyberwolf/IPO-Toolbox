@@ -1,11 +1,10 @@
 ﻿Imports System.Text.RegularExpressions
-Imports IPO_Toolbox.Licensing
 Imports IPO_Toolbox.Functions
 Imports IPO_Toolbox.GlobalVars
 Public Class Main
     '///Do stuff on load
     Private Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.Text = Application.ProductName & " BETA 1" '& Application.ProductVersion
+        Me.Text = Application.ProductName & " BETA 2" '& Application.ProductVersion
         'DoLicenseCheck()
         Me.KeyPreview = True
         If My.Settings.UpgradeRequired = True Then
@@ -22,7 +21,7 @@ Public Class Main
         'Set default username
         TextBoxUsername.Text = My.Settings.Username
 
-        BetaCheck()
+        'BetaCheck()
         'Create columns
         With systemlist
             .Columns.Add("System Name", System.Type.GetType("System.String"))
@@ -39,7 +38,7 @@ Public Class Main
                 LoadCsv()
             End If
         Catch ex As Exception
-            ToolStripStatusLabel1.Text = "Something happened!"
+            ToolStripStatusLabel1.Text = "Error loading the CSV :("
         End Try
     End Sub
 
@@ -206,4 +205,14 @@ Public Class Main
 
     End Sub
 
+    Private Async Sub ButtonShowPassword_Click(sender As Object, e As EventArgs) Handles ButtonShowPassword.Click
+        ButtonShowPassword.BackColor = Color.Yellow
+        ButtonShowPassword.Enabled = False
+        TextBoxPassword.UseSystemPasswordChar = False
+        Await Task.Delay(5000)
+        ButtonShowPassword.BackColor = SystemColors.Control
+        TextBoxPassword.UseSystemPasswordChar = True
+        ButtonShowPassword.Enabled = True
+    End Sub
 End Class
+

@@ -68,6 +68,7 @@ Partial Class Main
         Me.ButtonLaunchManager = New System.Windows.Forms.Button()
         Me.ButtonCopyPassword = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.ButtonShowPassword = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.StatusStrip1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -202,24 +203,24 @@ Partial Class Main
         '
         Me.SingleCellSelectToolStripMenuItem.CheckOnClick = True
         Me.SingleCellSelectToolStripMenuItem.Name = "SingleCellSelectToolStripMenuItem"
-        Me.SingleCellSelectToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SingleCellSelectToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
         Me.SingleCellSelectToolStripMenuItem.Text = "Single Cell Select"
         '
         'DarkModeToolStripMenuItem
         '
         Me.DarkModeToolStripMenuItem.Name = "DarkModeToolStripMenuItem"
-        Me.DarkModeToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.DarkModeToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
         Me.DarkModeToolStripMenuItem.Text = "Dark Mode"
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(177, 6)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(161, 6)
         '
         'ResetAllSettingsToolStripMenuItem
         '
         Me.ResetAllSettingsToolStripMenuItem.Name = "ResetAllSettingsToolStripMenuItem"
-        Me.ResetAllSettingsToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ResetAllSettingsToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
         Me.ResetAllSettingsToolStripMenuItem.Text = "Reset All Settings"
         '
         'HelpToolStripMenuItem
@@ -232,43 +233,43 @@ Partial Class Main
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'CheckForUpdatesToolStripMenuItem
         '
         Me.CheckForUpdatesToolStripMenuItem.Enabled = False
         Me.CheckForUpdatesToolStripMenuItem.Name = "CheckForUpdatesToolStripMenuItem"
-        Me.CheckForUpdatesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CheckForUpdatesToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
         Me.CheckForUpdatesToolStripMenuItem.Text = "Check for Updates"
         '
         'ViewChangelogToolStripMenuItem
         '
         Me.ViewChangelogToolStripMenuItem.Enabled = False
         Me.ViewChangelogToolStripMenuItem.Name = "ViewChangelogToolStripMenuItem"
-        Me.ViewChangelogToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ViewChangelogToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
         Me.ViewChangelogToolStripMenuItem.Text = "View Changelog"
         '
         'ToolStripSeparator4
         '
         Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
-        Me.ToolStripSeparator4.Size = New System.Drawing.Size(177, 6)
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(171, 6)
         '
         'ReportABugToolStripMenuItem
         '
         Me.ReportABugToolStripMenuItem.Name = "ReportABugToolStripMenuItem"
-        Me.ReportABugToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ReportABugToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
         Me.ReportABugToolStripMenuItem.Text = "Report a Bug"
         '
         'ToolStripSeparator3
         '
         Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(177, 6)
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(171, 6)
         '
         'BuyMeACoffeeToolStripMenuItem
         '
         Me.BuyMeACoffeeToolStripMenuItem.Name = "BuyMeACoffeeToolStripMenuItem"
-        Me.BuyMeACoffeeToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.BuyMeACoffeeToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
         Me.BuyMeACoffeeToolStripMenuItem.Text = "Buy me a coffee? :)"
         '
         'OpenFileDialog1
@@ -380,7 +381,7 @@ Partial Class Main
         'ButtonCopyPassword
         '
         Me.ButtonCopyPassword.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ButtonCopyPassword.Location = New System.Drawing.Point(597, 427)
+        Me.ButtonCopyPassword.Location = New System.Drawing.Point(635, 427)
         Me.ButtonCopyPassword.Name = "ButtonCopyPassword"
         Me.ButtonCopyPassword.Size = New System.Drawing.Size(88, 20)
         Me.ButtonCopyPassword.TabIndex = 12
@@ -396,11 +397,23 @@ Partial Class Main
         Me.Label1.TabIndex = 13
         Me.Label1.UseMnemonic = False
         '
+        'ButtonShowPassword
+        '
+        Me.ButtonShowPassword.BackColor = System.Drawing.Color.Transparent
+        Me.ButtonShowPassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ButtonShowPassword.Image = CType(resources.GetObject("ButtonShowPassword.Image"), System.Drawing.Image)
+        Me.ButtonShowPassword.Location = New System.Drawing.Point(591, 426)
+        Me.ButtonShowPassword.Name = "ButtonShowPassword"
+        Me.ButtonShowPassword.Size = New System.Drawing.Size(24, 22)
+        Me.ButtonShowPassword.TabIndex = 14
+        Me.ButtonShowPassword.UseVisualStyleBackColor = False
+        '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(784, 501)
+        Me.Controls.Add(Me.ButtonShowPassword)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.ButtonCopyPassword)
         Me.Controls.Add(Me.ButtonLaunchManager)
@@ -474,4 +487,5 @@ Partial Class Main
     Friend WithEvents Label1 As Label
     Friend WithEvents ToolStripSeparator4 As ToolStripSeparator
     Friend WithEvents ReportABugToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ButtonShowPassword As Button
 End Class

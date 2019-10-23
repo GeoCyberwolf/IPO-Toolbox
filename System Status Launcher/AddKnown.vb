@@ -1,6 +1,5 @@
 ﻿Imports IPO_Toolbox.Functions
 Imports IPO_Toolbox.GlobalVars
-Imports System.Text.RegularExpressions
 Public Class AddKnown
     Private Sub ButtonOK_Click(sender As Object, e As EventArgs) Handles ButtonOK.Click
         Dim IPAddr As Net.IPAddress

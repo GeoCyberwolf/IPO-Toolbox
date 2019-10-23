@@ -133,6 +133,18 @@
     <value>506, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="ButtonShowPassword.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAX1JREFUOE/t08sr5XEYx/GTjJgxhGkUGs1iIspfYIOSIrntCDUzctm4i7LBitKs
+        /AeUhbCQlSwoK1lYWLjkkoaNS9lImnm/f52jpFMW7M6nXvXrd3nO9/t8nxOK5d2SiGwUogQtaEMF8pCG
+        V6cAPzGHMzzgCtd4DF8v4BfyETUJqMU6DrCIHQyiJmwE5zjBPrZQhRdJxySOsYRS5CAXbnsIvchCHVbR
+        jE38hc+TEcQPLbaLAfjgK8wn9OEe/+DHGeiCWzajuMUsvkRuHMGXPiIF7ShGPaaxBwuqA9UYhj8eD4vb
+        4ykEH9ygG67IghNoQA8ihSJcsf0cQyo+h+/Z2z8ItjePO/QjDr7gtT30ACLF3EkRPKjfsKCFPcQZfEcQ
+        l+5L9mgDjViDK8mE2/S5xSqxDPu9glOMw+LP8gGOzTYsfAjn0JXaM9lvJ8EiHqIjZr+TEDU/0AmH9xIO
+        sz12oL2+gC1qwtMWXxPHw79ZOdxyK8rgXH6Df4RY3jyh0H/K+VvVTuMM8wAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAkAEBAAAAEAIABoBAAAlgAAABgYAAABACAAiAkAAP4EAAAgIAAAAQAgAKgQAACGDgAAMDAAAAEA
