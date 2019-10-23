@@ -53,9 +53,6 @@ Partial Class Main
         Me.ReportABugToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.BuyMeACoffeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DQToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SetPrefixToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ImportAccountNumbersToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.TextBoxPassword = New System.Windows.Forms.TextBox()
         Me.TextBoxUsername = New System.Windows.Forms.TextBox()
@@ -72,7 +69,6 @@ Partial Class Main
         Me.ButtonCopyPassword = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ButtonShowPassword = New System.Windows.Forms.Button()
-        Me.cbUseAccountNumber = New System.Windows.Forms.CheckBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.StatusStrip1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -132,7 +128,7 @@ Partial Class Main
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.ToolsToolStripMenuItem, Me.OptionsToolStripMenuItem, Me.DQToolStripMenuItem, Me.HelpToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.ToolsToolStripMenuItem, Me.OptionsToolStripMenuItem, Me.HelpToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(784, 24)
@@ -237,63 +233,44 @@ Partial Class Main
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'CheckForUpdatesToolStripMenuItem
         '
         Me.CheckForUpdatesToolStripMenuItem.Enabled = False
         Me.CheckForUpdatesToolStripMenuItem.Name = "CheckForUpdatesToolStripMenuItem"
-        Me.CheckForUpdatesToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
+        Me.CheckForUpdatesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.CheckForUpdatesToolStripMenuItem.Text = "Check for Updates"
         '
         'ViewChangelogToolStripMenuItem
         '
         Me.ViewChangelogToolStripMenuItem.Enabled = False
         Me.ViewChangelogToolStripMenuItem.Name = "ViewChangelogToolStripMenuItem"
-        Me.ViewChangelogToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
+        Me.ViewChangelogToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ViewChangelogToolStripMenuItem.Text = "View Changelog"
         '
         'ToolStripSeparator4
         '
         Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
-        Me.ToolStripSeparator4.Size = New System.Drawing.Size(171, 6)
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(177, 6)
         '
         'ReportABugToolStripMenuItem
         '
         Me.ReportABugToolStripMenuItem.Name = "ReportABugToolStripMenuItem"
-        Me.ReportABugToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
+        Me.ReportABugToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ReportABugToolStripMenuItem.Text = "Report a Bug"
         '
         'ToolStripSeparator3
         '
         Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(171, 6)
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(177, 6)
         '
         'BuyMeACoffeeToolStripMenuItem
         '
         Me.BuyMeACoffeeToolStripMenuItem.Name = "BuyMeACoffeeToolStripMenuItem"
-        Me.BuyMeACoffeeToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
+        Me.BuyMeACoffeeToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.BuyMeACoffeeToolStripMenuItem.Text = "Buy me a coffee? :)"
-        '
-        'DQToolStripMenuItem
-        '
-        Me.DQToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SetPrefixToolStripMenuItem, Me.ImportAccountNumbersToolStripMenuItem})
-        Me.DQToolStripMenuItem.Name = "DQToolStripMenuItem"
-        Me.DQToolStripMenuItem.Size = New System.Drawing.Size(36, 20)
-        Me.DQToolStripMenuItem.Text = "DQ"
-        '
-        'SetPrefixToolStripMenuItem
-        '
-        Me.SetPrefixToolStripMenuItem.Name = "SetPrefixToolStripMenuItem"
-        Me.SetPrefixToolStripMenuItem.Size = New System.Drawing.Size(210, 22)
-        Me.SetPrefixToolStripMenuItem.Text = "Set Password Prefix"
-        '
-        'ImportAccountNumbersToolStripMenuItem
-        '
-        Me.ImportAccountNumbersToolStripMenuItem.Name = "ImportAccountNumbersToolStripMenuItem"
-        Me.ImportAccountNumbersToolStripMenuItem.Size = New System.Drawing.Size(210, 22)
-        Me.ImportAccountNumbersToolStripMenuItem.Text = "Import Account Numbers"
         '
         'OpenFileDialog1
         '
@@ -431,22 +408,11 @@ Partial Class Main
         Me.ButtonShowPassword.TabIndex = 14
         Me.ButtonShowPassword.UseVisualStyleBackColor = False
         '
-        'cbUseAccountNumber
-        '
-        Me.cbUseAccountNumber.AutoSize = True
-        Me.cbUseAccountNumber.Location = New System.Drawing.Point(616, 459)
-        Me.cbUseAccountNumber.Name = "cbUseAccountNumber"
-        Me.cbUseAccountNumber.Size = New System.Drawing.Size(128, 17)
-        Me.cbUseAccountNumber.TabIndex = 15
-        Me.cbUseAccountNumber.Text = "Use Account Number"
-        Me.cbUseAccountNumber.UseVisualStyleBackColor = True
-        '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(784, 501)
-        Me.Controls.Add(Me.cbUseAccountNumber)
         Me.Controls.Add(Me.ButtonShowPassword)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.ButtonCopyPassword)
@@ -522,8 +488,4 @@ Partial Class Main
     Friend WithEvents ToolStripSeparator4 As ToolStripSeparator
     Friend WithEvents ReportABugToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ButtonShowPassword As Button
-    Friend WithEvents cbUseAccountNumber As CheckBox
-    Friend WithEvents DQToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents SetPrefixToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ImportAccountNumbersToolStripMenuItem As ToolStripMenuItem
 End Class
