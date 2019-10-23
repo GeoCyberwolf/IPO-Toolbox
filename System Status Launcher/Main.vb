@@ -214,5 +214,6 @@ Public Class Main
         TextBoxPassword.UseSystemPasswordChar = True
         ButtonShowPassword.Enabled = True
     End Sub
+
 End Class
 
